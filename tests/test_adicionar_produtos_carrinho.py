@@ -17,8 +17,7 @@ driver.find_element(By.XPATH, '//*[@class="inventory_item_name " and text()="Sau
 time.sleep(2)
 driver.find_element(By.XPATH, "//*[text()='Add to cart']").click()
 time.sleep(2)
-
 driver.find_element(By.XPATH, "//*[@class='shopping_cart_link']").click()
 time.sleep(2)
 
-assert driver.find_element(By.XPATH, '//*[@class="inventory_item_name " and text()="Sauce Labs Backpack"]').is_displayed()
+assert driver.find_element(By.XPATH, '//*[@class="inventory_item_name" and text()="Sauce Labs Backpack"]').is_displayed
