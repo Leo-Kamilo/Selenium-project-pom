@@ -5,6 +5,7 @@ import conftest
 
 
 @pytest.mark.usefixtures('setup_teardown')
+@pytest.mark.carrinho
 class TestCT01:
     def test_ct01_adicionar_produtos_carrinho(self):
         driver = conftest.driver
