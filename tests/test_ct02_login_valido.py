@@ -9,6 +9,7 @@ from pages.login_page import LoginPage
 @pytest.mark.smoke
 class TestCT02:
     def test_ct02_login_valido(self):
+        
         # Instancia os objetos a serem usados no teste
         login_page = LoginPage()
         home_page = HomePage()
