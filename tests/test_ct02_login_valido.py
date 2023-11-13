@@ -1,7 +1,6 @@
 import time
 import pytest
-from selenium.webdriver.common.by import By
-import conftest
+from pages.home_page import HomePage
 from pages.login_page import LoginPage
 
 
@@ -10,10 +9,14 @@ from pages.login_page import LoginPage
 @pytest.mark.smoke
 class TestCT02:
     def test_ct02_login_valido(self):
-        driver = conftest.driver
+        # Instancia os objetos a serem usados no teste
         login_page = LoginPage()
+        home_page = HomePage()
 
+
+        #Faz login
         login_page.fazer_login("standard_user", "secret_sauce")
 
-        assert driver.find_element(By.XPATH, "//span[@class='title']").is_displayed()
-        time.sleep(1)
+        # Verifica se o login foi realizado
+        home_page.verificar_login_com_sucesso()
+       
