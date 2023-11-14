@@ -22,9 +22,9 @@ class TestCT01:
        
 
         #Verifica se a mochila foi adicionada
-        driver.find_element(By.XPATH, "//*[@class='shopping_cart_link']").click()
-        time.sleep(2)
+        home_page.acessar_carrinho()
         assert driver.find_element(By.XPATH, '//*[@class="inventory_item_name" and text()="Sauce Labs Backpack"]').is_displayed
+
 
         #Volta pra tela de produtos
         driver.find_element(By.ID, "continue-shopping").click()
