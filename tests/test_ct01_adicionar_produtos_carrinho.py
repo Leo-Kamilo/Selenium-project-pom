@@ -28,17 +28,13 @@ class TestCT01:
         carrinho_page.verificar_produto_carrinho_existe("Sauce Labs Backpack")
 
 
-        # #Volta pra tela de produtos
-        # driver.find_element(By.ID, "continue-shopping").click()
+         #Volta pra tela de produtos
+        carrinho_page.clicar_continuar_comprando()
 
-        # #Adiciona a mais um item ao carrinho
-        # driver.find_element(By.XPATH, '//*[@class="inventory_item_name " and text()="Sauce Labs Bike Light"]').click()
-        # time.sleep(1)
-        # driver.find_element(By.XPATH, "//*[text()='Add to cart']").click()
-        # time.sleep(2)
+         #Adiciona a mais um item ao carrinho
+        home_page.adicionar_ao_carrinho("Sauce Labs Bolt T-Shirt")
 
-        # #Verifica se os 2 itens estão no carrinho
-        # driver.find_element(By.XPATH, "//*[@class='shopping_cart_link']").click()
-        # time.sleep(2)
-        # assert driver.find_element(By.XPATH, '//*[@class="inventory_item_name" and text()="Sauce Labs Backpack"]').is_displayed
-        # assert driver.find_element(By.XPATH, '//*[@class="inventory_item_name" and text()="Sauce Labs Bike Light"]').is_displayed
+         #Verifica se os 2 itens estão no carrinho
+        home_page.acessar_carrinho()
+        carrinho_page.verificar_produto_carrinho_existe("Sauce Labs Backpack")
+        carrinho_page.verificar_produto_carrinho_existe("Sauce Labs Bolt T-Shirt")
