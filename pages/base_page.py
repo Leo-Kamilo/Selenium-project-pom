@@ -1,4 +1,6 @@
 import conftest
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class BasePage:
     def __init__(self):
@@ -21,3 +23,6 @@ class BasePage:
 
     def  pegar_texto_elemento(self, locator):
         return self.encontrar_elemento(locator).text
+    
+    def esperar_elemento_aparecer(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(EC.presence_of_all_elements_located(*locator))
