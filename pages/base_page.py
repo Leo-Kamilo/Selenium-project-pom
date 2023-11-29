@@ -22,6 +22,7 @@ class BasePage:
         assert self.encontrar_elemento(locator).is_displayed(), f"O elemento '{locator}' não foi encontrado na tela."
 
     def  pegar_texto_elemento(self, locator):
+        self.esperar_elemento_aparecer(locator)
         return self.encontrar_elemento(locator).text
     
     def esperar_elemento_aparecer(self, locator, timeout=10):
