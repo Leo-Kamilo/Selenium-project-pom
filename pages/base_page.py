@@ -1,6 +1,7 @@
 import conftest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver import ActionChains
 
 class BasePage:
     def __init__(self):
@@ -33,3 +34,12 @@ class BasePage:
 
     def verificar_elemento_não_existe(self, locator):
         assert len(self.encontrar_elementos(locator)) == 0, f"elemento '{locator}' existe, mas é esperado que não exista."
+
+    def  cliclar_duplo(self, locator):
+        element = self.esperar_elemento_aparecer(locator)
+        ActionChains(self.driver).double_click(element).perform()
+
+    def  cliclar_botao_direito(self, locator):
+        element = self.esperar_elemento_aparecer(locator)
+        ActionChains(self.driver).context_click(element).perform()  
+
